@@ -29,7 +29,7 @@ public class QuickSort {
 		
 		
 		myQuickSort(a,x,last_less-1);
-		myQuickSort(a, last_less+1, a.length-1);
+		myQuickSort(a, last_less+1, y);
 		
 		}
 	

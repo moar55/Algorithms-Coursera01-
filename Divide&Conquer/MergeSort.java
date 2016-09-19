@@ -7,31 +7,17 @@ public class MergeSort {
 		//Test here...
 	}
 
-	static int [] mergeSort(int [] input){
+	public static int [] mergeSort(int [] input){
 	    
 	    if(input.length==1)
 	    	return input;
 	    
-	    /* The else if part is to reduce the code by one recursive call */ 
-	    // I don't think it would make much of a difference , but I didn't want to remove it after thinking of it :) 
-
-	    else if(input.length==2){
-	    	if(input[0]<=input[1])
-	    		return input;
-	    	else{
-	    		int temp = input[0];
-	    		input[0]=input[1];
-	    		input[1]=temp;
-	    		return input;
-	    	}	
-	    }
-
-	    	    
-	   return merge(mergeSort(Arrays.copyOfRange(input, 0, input.length/2)),mergeSort(Arrays.copyOfRange(input, input.length/2, input.length)));
+	   return merge(mergeSort(Arrays.copyOfRange(input, 0, input.length/2)),
+	   		mergeSort(Arrays.copyOfRange(input, input.length/2, input.length)));
 	    
 	}
 	
-	static int [] merge(int [] a, int [] b){
+	public static int [] merge(int [] a, int [] b){
 		int [] output = new int [a.length+b.length];
 		int i= 0,j=0,w=0 ; 
 		while(a.length!=i && b.length!=j){
@@ -54,7 +40,7 @@ public class MergeSort {
 		}
 	}
 	
-	static int [] concatAtIndex(int [] output, int w, int [] a, int i){
+	public static int [] concatAtIndex(int [] output, int w, int [] a, int i){
 			for (; i < a.length; i++,w++) {
 				output[w]=a[i];
 			}
